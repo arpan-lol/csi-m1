@@ -1,15 +1,19 @@
 {
   "name": "frontend",
-  "main": "expo-router/entry",
   "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "packageManager": "bun@1.1.20",
   "scripts": {
-    "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web",
-    "test": "jest --watchAll",
-    "lint": "expo lint"
+    "dev": "bunx expo start",
+    "start": "bunx expo start",
+    "android": "bunx expo run:android",
+    "ios": "bunx expo run:ios",
+    "web": "bunx expo start --web",
+    "reset-project": "bun scripts/reset-project.js",
+    "lint": "bunx expo lint",
+    "test": "bun test",
+    "test:jest": "node ./node_modules/.bin/jest --watchAll"
   },
   "jest": {
     "preset": "jest-expo"
@@ -70,6 +74,5 @@
     "jest-expo": "~53.0.9",
     "react-test-renderer": "19.0.0",
     "typescript": "^5.3.3"
-  },
-  "private": true
+  }
 }
